@@ -1,0 +1,61 @@
+		
+		
+		/* Pointer stuff
+		pointer = new Pointer(plat);
+		pointer.events.connect(new Slot<Pointer.Event>(){
+		
+		
+		pointer = new Pointer(plat, buttonLayer, false);
+		buttonOne.layer.events().connect(new Pointer.Listener() {
+			 public void onEmit(Pointer.Event event) {
+					if(gameState == PLAYING && event.kind.isStart && buttonOne.isRed == true){
+						buttonOne.setBlue();
+                        buttonPressed = true;
+                        score++;
+                          scoreDisplay.delete(0,scoreDisplay.length());
+                        scoreDisplay.append("Score \n"+ score);
+                        scoreBoardLayer.begin();
+						TextBlock block = new TextBlock(plat.graphics().layoutText(
+						scoreDisplay.toString(), 
+						new TextFormat(new Font("Helvetica", Font.Style.BOLD, 20)),
+						TextWrap.MANUAL));
+						canvas.clear();
+						canvas.setFillColor(0xFFFFFFFF);
+						block.fill(canvas, TextBlock.Align.LEFT, 2, 2);
+                        buttonLayer.addFloorAt(scoreBoardLayer, 20, 20);  
+                        scoreBoardLayer.end();
+						}
+					if (gameState == PLAYING && buttonOne.isRed == false){
+						gameState = GAMEOVER;
+						populateScreen(bgLayer, titleLayer);
+                        scoreDisplay.delete(0,scoreDisplay.length());
+                        scoreDisplay.append("Score \n"+ score);
+                        scoreBoardLayer.begin();
+						TextBlock block = new TextBlock(plat.graphics().layoutText(
+						scoreDisplay.toString(), 
+						new TextFormat(new Font("Helvetica", Font.Style.BOLD, 20)),
+						TextWrap.MANUAL));
+						canvas.clear();
+						canvas.setFillColor(0xFFFFFFFF);
+						block.fill(canvas, TextBlock.Align.LEFT, 2, 2);
+                        buttonLayer.addFloorAt(scoreBoardLayer, 20, 20);  
+                        scoreBoardLayer.end();
+                        
+                          strikeCounterDisplay.delete(0, strikeCounterDisplay.length());
+						strikeCounterDisplay.append("Strike Counter: \n" + strikeCounter);
+						strikeLayer.begin();
+						TextBlock block2 = new TextBlock(plat.graphics().layoutText(
+						strikeCounterDisplay.toString(),
+						new TextFormat(new Font("Helvetica", Font.Style.BOLD, 20)),
+						TextWrap.MANUAL));
+						canvas2.clear();
+						canvas2.setFillColor(0xFFFFFFFF);
+						block2.fill(canvas2, TextBlock.Align.LEFT, 2, 2);
+						buttonLayer.addFloorAt(strikeLayer, 600, 20);
+						strikeLayer.end();
+
+						
+						}		
+				}
+			});
+	 */

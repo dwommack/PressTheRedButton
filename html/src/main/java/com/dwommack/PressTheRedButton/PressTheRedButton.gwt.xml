@@ -1,0 +1,11 @@
+<module rename-to='presstheredbutton'>
+  <inherits name='playn.Scene'/>
+  <inherits name='PressTheRedButtonAssets'/>
+
+  <source path='core'/>
+  <source path='html'/>
+
+  <public path="resources" />
+
+  <entry-point class='com.dwommack.PressTheRedButton.html.PressTheRedButtonHtml'/>
+</module>
