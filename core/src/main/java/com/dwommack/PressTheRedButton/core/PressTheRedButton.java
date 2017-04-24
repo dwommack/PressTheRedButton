@@ -132,11 +132,22 @@ public class PressTheRedButton extends SceneGame {
     int buttonColor;
     boolean isRed;
     ImageLayer layer = new ImageLayer(images[0]);
+
+    boolean isPressed;
     
     public Button(final GroupLayer buttonLayer, float x, float y, int color) {
       this.layer.setOrigin(ImageLayer.Origin.CENTER);
       buttonLayer.addAt(layer, x, y);
       this.setColor(color);
+
+      layer.events().connect(new Pointer.Listener() {
+        @Override public void onStart (Pointer.Interaction iact) {
+          isPressed = true; 
+        };
+        @Override public void onEnd (Pointer.Interaction iact) {
+          isPressed = false; 
+        }
+      });
     }
   
     public void setBlue(){
@@ -286,19 +297,19 @@ public class PressTheRedButton extends SceneGame {
              updateScore(scoreDisplay, scoreBoardLayer, canvas);
              updateStrikeCounter(strikeCounterDisplay, strikeLayer, canvas2);
         }
-        if(gameState == PLAYING && buttonOne.isRed == true){
+        if(gameState == PLAYING && buttonOne.isRed && buttonOne.isPressed){
              buttonOne.setBlue();
              buttonPressed = true;
              score++;
              updateScore(scoreDisplay, scoreBoardLayer, canvas);
         }
-        if (gameState == PLAYING && buttonTwo.isRed){
+        if (gameState == PLAYING && buttonTwo.isRed && buttonTwo.isPressed){
              buttonTwo.setBlue();
              buttonPressed = true;
              score++;
              updateScore(scoreDisplay, scoreBoardLayer, canvas);
         }
-        if (gameState == PLAYING && buttonThree.isRed == true){
+        if (gameState == PLAYING && buttonThree.isRed && buttonThree.isPressed){
              buttonThree.setBlue();
              score++;
              buttonPressed = true;
